@@ -1,0 +1,57 @@
+﻿<Window x:Class="LibraryApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryApp"
+        mc:Ignorable="d"
+        Title="Библиотека" Height="600" Width="800"
+        Loaded="Window_Loaded" Icon="/icons8-домашнее-задание-96.png">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TabControl 
+            SelectionChanged="TabControl_SelectionChanged"
+            x:Name="Tabs"
+            >
+
+            <TabItem Header="Книги" x:Name="booksTab">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="370*"/>
+                        <ColumnDefinition Width="27*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Margin="57,46,0,0"
+                        x:Name="booksDataGrid"
+                        AutoGenerateColumns="True" 
+                        Height="376" VerticalAlignment="Top" HorizontalAlignment="Left" Width="673"/>
+                    <Button Content="Добавить книгу" 
+                            Name="addBook"
+                            Width="110"
+                            Height="30" Margin="619,432,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="addBook_Click"
+                            />
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Читатели" Name="usersTab">
+                <Grid>
+                    <DataGrid
+                        Margin="57,-100,64,0"
+                        x:Name="usersDataGrid"
+                        AutoGenerateColumns="True" Height="372" HorizontalAlignment="Left" Width="682"/>    
+                </Grid>
+                
+            </TabItem>
+
+            <TabItem Header="Книги читателей" Name="userBooksTab">
+                <DataGrid
+                    Margin="57,-100,64,0"
+                    x:Name="userBooksDataGrid"
+                    AutoGenerateColumns="True" Height="372" HorizontalAlignment="Left" Width="682"/>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
