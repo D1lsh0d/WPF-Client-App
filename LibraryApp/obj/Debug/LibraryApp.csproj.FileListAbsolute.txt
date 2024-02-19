@@ -33,3 +33,5 @@ D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\bin\Debug\System.Runtime
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Windows\CreateBook.g.cs
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Windows\CreateBook.baml
+D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Windows\EditBook.baml
+D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Windows\EditBook.g.cs

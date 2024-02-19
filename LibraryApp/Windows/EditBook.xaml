@@ -1,0 +1,39 @@
+﻿<Window x:Class="LibraryApp.Windows.EditBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Edit Book" Height="350" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Id:" Grid.Row="0"/>
+        <TextBox Text="{Binding Id}" Grid.Row="1" Margin="5" IsReadOnly="True"/>
+
+        <Label Content="Name:" Grid.Row="2"/>
+        <TextBox Text="{Binding Name}" Grid.Row="3" Margin="5"/>
+
+        <Label Content="Author:" Grid.Row="4"/>
+        <TextBox Text="{Binding Author}" Grid.Row="5" Margin="5"/>
+
+        <Label Content="Description:" Grid.Row="6"/>
+        <TextBox Text="{Binding Description}" Grid.Row="7" Margin="5"/>
+
+        <Label Content="Print Date:" Grid.Row="8"/>
+        <DatePicker SelectedDate="{Binding PrintDate}" Grid.Row="9" Margin="5"/>
+
+        <Button Content="Save" Grid.Row="10" HorizontalAlignment="Left" Margin="5" Click="SaveButton_Click"/>
+        <Button Content="Cancel" Grid.Row="10" HorizontalAlignment="Right" Margin="5" Click="CancelButton_Click"/>
+    </Grid>
+</Window>

@@ -66,5 +66,25 @@ namespace LibraryApp
             CreateBook window = new CreateBook();
             window.ShowDialog();
         }
+
+        private void editBook_Click(object sender, RoutedEventArgs e)
+        {
+            // Проверяем, есть ли выделенные ячейки
+            if (booksDataGrid.SelectedCells.Count > 0)
+            {
+                // Получаем выбранный объект из коллекции
+                var selectedObject = booksDataGrid.SelectedItem;
+
+                if (selectedObject is Books book)
+                {
+                    EditBook editBook = new EditBook(book);
+                    editBook.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Для редактирования сначала выберите строку книги, затем нажмите на кнопку \"Редактировать\" ", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+        }
     }
 }

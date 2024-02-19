@@ -25,6 +25,7 @@
                     </Grid.ColumnDefinitions>
                     <DataGrid Margin="57,46,0,0"
                         x:Name="booksDataGrid"
+                              IsReadOnly="True"
                         AutoGenerateColumns="True" 
                         Height="376" VerticalAlignment="Top" HorizontalAlignment="Left" Width="673"/>
                     <Button Content="Добавить книгу" 
@@ -32,6 +33,12 @@
                             Width="110"
                             Height="30" Margin="619,432,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="addBook_Click"
                             />
+                    <Button Content="Редактировать" 
+                        x:Name="editBook"
+                        Width="110"
+                        Height="30" Margin="497,432,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                        Click="editBook_Click"/>
+
                 </Grid>
             </TabItem>
 
