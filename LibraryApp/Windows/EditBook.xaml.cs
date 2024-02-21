@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,9 +32,36 @@ namespace LibraryApp.Windows
             Close();
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            Books book = new Books()
+            {
+                Id = Int32.Parse(bookId.Text),
+                Author = bookAuthor.Text,
+                Name = bookName.Text,
+                PrintDate = bookPrintDate.SelectedDate,
+                Description = bookDescription.Text
+            };
 
+            // Преобразование объекта в JSON-строку
+            string jsonContent = Newtonsoft.Json.JsonConvert.SerializeObject(book);
+
+            // Создание контента запроса
+            StringContent content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+            // Отправка POST-запроса на сервер
+            HttpResponseMessage response = await ApiHelper.client.PutAsync(ApiHelper.client.BaseAddress + "Books/UpdateBook", content);
+
+            // Проверка успешности запроса
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show(response.Content.ReadAsStringAsync().Result, caption: "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show($"Error: {response.StatusCode} - {response.Content.ReadAsStringAsync().Result}", caption: "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
