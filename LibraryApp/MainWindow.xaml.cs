@@ -45,19 +45,22 @@ namespace LibraryApp
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            TabItem selectedTab = Tabs.SelectedItem as TabItem;
-            switch (selectedTab.Header)
+            if (e.OriginalSource is TabControl)
             {
-                case "Книги":
-                    ApiHelper.UpdateBooksDG();
-                    break;
+                TabItem selectedTab = Tabs.SelectedItem as TabItem;
+                switch (selectedTab.Header)
+                {
+                    case "Книги":
+                        ApiHelper.UpdateBooksDG();
+                        break;
 
-                case "Читатели":
-                    ApiHelper.UpdateUsersDG();
-                    break;
-                case "Книги читателей":
-                    ApiHelper.UpdateUserBooksDG();
-                    break;
+                    case "Читатели":
+                        ApiHelper.UpdateUsersDG();
+                        break;
+                    case "Книги читателей":
+                        ApiHelper.UpdateUserBooksDG();
+                        break;
+                }
             }
         }
 
