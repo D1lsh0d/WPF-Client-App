@@ -18,7 +18,7 @@ namespace LibraryApp
 
         public static HttpClient client = new HttpClient();
 
-        public static void UpdateBooksDG()
+        public static void UpdateBooksCollection()
         {
             try
             {
@@ -51,7 +51,7 @@ namespace LibraryApp
             }
         }
 
-        public static void UpdateUsersDG()
+        public static void UpdateUsersCollection()
         {
             try
             {
@@ -84,7 +84,7 @@ namespace LibraryApp
             }
         }
 
-        public static void UpdateUserBooksDG()
+        public static void UpdateUserBooksCollection()
         {
             try
             {
@@ -116,5 +116,8 @@ namespace LibraryApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+
+
     }
 }

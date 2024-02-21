@@ -39,26 +39,26 @@ namespace LibraryApp
         
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ApiHelper.UpdateBooksDG();
+            ApiHelper.UpdateBooksCollection();
         }
 
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.OriginalSource is TabControl)
+            if (e.OriginalSource is TabControl) // Проверяем точно ли событие вызвано открытием TabControl
             {
                 TabItem selectedTab = Tabs.SelectedItem as TabItem;
                 switch (selectedTab.Header)
                 {
                     case "Книги":
-                        ApiHelper.UpdateBooksDG();
+                        ApiHelper.UpdateBooksCollection();
                         break;
 
                     case "Читатели":
-                        ApiHelper.UpdateUsersDG();
+                        ApiHelper.UpdateUsersCollection();
                         break;
                     case "Книги читателей":
-                        ApiHelper.UpdateUserBooksDG();
+                        ApiHelper.UpdateUserBooksCollection();
                         break;
                 }
             }
@@ -87,6 +87,40 @@ namespace LibraryApp
             else
             {
                 MessageBox.Show("Для редактирования сначала выберите строку книги, затем нажмите на кнопку \"Редактировать\" ", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+        }
+
+        private void deleteBookBtn_Click(object sender, RoutedEventArgs e)
+        {
+            // Проверяем, есть ли выделенные ячейки
+            if (booksDataGrid.SelectedCells.Count > 0)
+            {
+                // Получаем выбранный объект из коллекции
+                var selectedObject = booksDataGrid.SelectedItem;
+
+                if (selectedObject is Books book)
+                {
+                    MessageBoxResult confirmDelete = MessageBox.Show($"Вы уверены что хотите удалить книгу \"{book.Name}\"?", "Подтвердите удаление", MessageBoxButton.YesNo, MessageBoxImage.Hand);
+                    if (confirmDelete == MessageBoxResult.Yes)
+                    {
+                        // Отправка DELETE-запроса на сервер
+                        HttpResponseMessage response = ApiHelper.client.DeleteAsync(ApiHelper.client.BaseAddress + "Books/" + book.Id.ToString()).Result;
+
+                        // Проверка успешности запроса
+                        if (response.IsSuccessStatusCode)
+                        {
+                            MessageBox.Show(response.Content.ReadAsStringAsync().Result, caption: "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Error: {response.StatusCode} - {response.ReasonPhrase}", caption: "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Для удаления сначала выберите строку книги, затем нажмите на кнопку \"Удалить\" ", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Stop);
             }
         }
     }

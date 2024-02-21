@@ -30,17 +30,24 @@
                         AutoGenerateColumns="True" 
                         Height="376" VerticalAlignment="Top" HorizontalAlignment="Left" Width="720"/>
                     <Button Content="Добавить книгу" 
-                            Name="addBook"
+                            Name="addBookBtn"
                             Width="110"
                             FontSize="10pt"
                             Height="30" Margin="648,430,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="addBook_Click"
                             />
                     <Button Content="Редактировать" 
-                        x:Name="editBook"
+                        x:Name="editBookBtn"
                         Width="110"
                         FontSize="10pt"
-                        Height="30" Margin="523,430,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                        Height="30" Margin="527,430,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
                         Click="editBook_Click"/>
+                    <Button Content="Удалить" 
+                        x:Name="deleteBookBtn"
+                        Width="110"
+                        Click="deleteBookBtn_Click"
+                        FontSize="10pt"
+                        Height="30" Margin="404,430,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                        />
 
                 </Grid>
             </TabItem>
