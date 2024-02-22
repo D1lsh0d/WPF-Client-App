@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryApp.Views.Users"
         mc:Ignorable="d"
-        Title="CreateUser" Height="450" Width="800">
+        Title="CreateUser" Height="350" Width="400">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="ФИО:" Grid.Row="0"/>
+        <TextBox x:Name="FullNameTextBox" Grid.Row="1" Margin="5"/>
+
+        <Label Content="Дата рождения:" Grid.Row="2"/>
+        <DatePicker x:Name="DateOfBirthPicker" Grid.Row="3" Margin="5"/>
+
+        <Label Content="Адрес:" Grid.Row="4"/>
+        <TextBox x:Name="AddressTextBox" Grid.Row="5" Margin="5"/>
+
+        <Label Content="Email:" Grid.Row="6"/>
+        <TextBox x:Name="EmailTextBox" Grid.Row="7" Margin="5"/>
+
+        <Label Content="Телефон:" Grid.Row="8"/>
+        <TextBox x:Name="PhoneTextBox" Grid.Row="9" Margin="5"/>
+
+        <Button Height="25" Width="80" Content="Сохранить" Grid.Row="10" HorizontalAlignment="Right" Margin="5" Click="SaveButton_Click"/>
     </Grid>
 </Window>

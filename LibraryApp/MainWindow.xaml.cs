@@ -18,7 +18,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LibraryApp.Models;
 using LibraryApp.Windows;
+using LibraryApp.Views;
 using System.Xml;
+using LibraryApp.Views.Users;
 
 namespace LibraryApp
 {
@@ -123,6 +125,12 @@ namespace LibraryApp
             {
                 MessageBox.Show("Для удаления сначала выберите строку книги, затем нажмите на кнопку \"Удалить\" ", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Stop);
             }
+        }
+
+        private void addUserBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CreateUser createUser = new CreateUser();
+            createUser.ShowDialog();
         }
     }
 }

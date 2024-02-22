@@ -46,22 +46,22 @@
             <TabItem Header="Читатели" Name="usersTab">
                 <Grid>
                     <DataGrid Margin="37,46,37,74"
-                        x:Name="usersDataGrid"
-                        IsReadOnly="True"
-                        MouseDoubleClick="editBook_Click"
-                        AutoGenerateColumns="True"/>
+                            x:Name="usersDataGrid"
+                            IsReadOnly="True"
+                            AutoGenerateColumns="True"/>
                     <Button Content="Добавить читателя" 
-                        Name="addUserBtn"
-                        FontSize="10pt" Margin="0,0,36,32" HorizontalAlignment="Right" Width="130" Height="30" VerticalAlignment="Bottom"/>
+                            Name="addUserBtn"
+                            Click="addUserBtn_Click"
+                            FontSize="10pt" Margin="0,0,36,32" HorizontalAlignment="Right" Width="130" Height="30" VerticalAlignment="Bottom"/>
                     <Button Content="Редактировать" 
-                        x:Name="editUserBtn"
-                        FontSize="10pt" Margin="0,0,175,32" 
-                        HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom"/>
+                            x:Name="editUserBtn"
+                            FontSize="10pt" Margin="0,0,175,32" 
+                            HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom"/>
                     <Button Content="Удалить" 
-                        x:Name="deleteUserBtn"
-                        FontSize="10pt" 
-                        Margin="0,0,296,32"
-                        HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom"/>
+                            x:Name="deleteUserBtn"
+                            FontSize="10pt" 
+                            Margin="0,0,296,32"
+                            HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom"/>
                 </Grid>
             </TabItem>
 
