@@ -80,11 +80,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Windows\CreateBook.xaml.cs">
+    <Compile Include="Views\Books\CreateBook.xaml.cs">
       <DependentUpon>CreateBook.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\EditBook.xaml.cs">
+    <Compile Include="Views\Books\EditBook.xaml.cs">
       <DependentUpon>EditBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users\CreateUser.xaml.cs">
+      <DependentUpon>CreateUser.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -99,11 +102,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Windows\CreateBook.xaml">
+    <Page Include="Views\Books\CreateBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\EditBook.xaml">
+    <Page Include="Views\Books\EditBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Users\CreateUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,5 +148,6 @@
   <ItemGroup>
     <Resource Include="icons8-домашнее-задание-96.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

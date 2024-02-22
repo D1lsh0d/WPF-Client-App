@@ -110,6 +110,7 @@ namespace LibraryApp
                         if (response.IsSuccessStatusCode)
                         {
                             MessageBox.Show(response.Content.ReadAsStringAsync().Result, caption: "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                            ApiHelper.booksCollection.Remove(book);
                         }
                         else
                         {

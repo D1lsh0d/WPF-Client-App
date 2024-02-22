@@ -31,7 +31,7 @@ D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\bin\Debug\System.Net.Htt
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\bin\Debug\System.Numerics.Vectors.xml
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Windows\CreateBook.g.cs
-D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Windows\CreateBook.baml
-D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Windows\EditBook.baml
-D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Windows\EditBook.g.cs
+D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Views\EditBook.baml
+D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Views\CreateBook.g.cs
+D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Views\EditBook.g.cs
+D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Views\CreateBook.baml

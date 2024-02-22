@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\App.xaml
-31936582601
+41343639546
 
-12-1432661605
+131493822630
 221804693740
-MainWindow.xaml;Windows\CreateBook.xaml;Windows\EditBook.xaml;
+MainWindow.xaml;Views\Books\CreateBook.xaml;Views\Books\EditBook.xaml;Views\Users\CreateUser.xaml;
 
 True
 

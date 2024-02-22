@@ -49,6 +49,7 @@ namespace LibraryApp.Windows
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show(response.Content.ReadAsStringAsync().Result, caption: "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                ApiHelper.UpdateBooksCollection();
                 this.Close();
             }
             else

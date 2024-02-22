@@ -14,39 +14,30 @@
 
         <TabControl 
             SelectionChanged="TabControl_SelectionChanged"
-            x:Name="Tabs"
-            >
+            x:Name="Tabs">
 
             <TabItem Header="Книги" x:Name="booksTab">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="777*"/>
-                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid Margin="38,46,0,0"
+                    <DataGrid Margin="37,46,37,74"
                         x:Name="booksDataGrid"
                         IsReadOnly="True"
                         MouseDoubleClick="editBook_Click"
-                        AutoGenerateColumns="True" 
-                        Height="376" VerticalAlignment="Top" HorizontalAlignment="Left" Width="720"/>
+                        AutoGenerateColumns="True"/>
                     <Button Content="Добавить книгу" 
                             Name="addBookBtn"
-                            Width="110"
-                            FontSize="10pt"
-                            Height="30" Margin="648,430,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="addBook_Click"
+                            FontSize="10pt" Margin="0,0,36,32" Click="addBook_Click" HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom"
                             />
                     <Button Content="Редактировать" 
                         x:Name="editBookBtn"
-                        Width="110"
-                        FontSize="10pt"
-                        Height="30" Margin="527,430,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
-                        Click="editBook_Click"/>
+                        FontSize="10pt" Margin="0,0,157,32" 
+                        Click="editBook_Click" HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom"/>
                     <Button Content="Удалить" 
                         x:Name="deleteBookBtn"
-                        Width="110"
                         Click="deleteBookBtn_Click"
-                        FontSize="10pt"
-                        Height="30" Margin="404,430,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                        FontSize="10pt" Margin="0,0,280,32" HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom" 
                         />
 
                 </Grid>
@@ -54,19 +45,31 @@
 
             <TabItem Header="Читатели" Name="usersTab">
                 <Grid>
-                    <DataGrid
-                        Margin="57,-100,64,0"
+                    <DataGrid Margin="37,46,37,74"
                         x:Name="usersDataGrid"
-                        AutoGenerateColumns="True" Height="372" HorizontalAlignment="Left" Width="682"/>
+                        IsReadOnly="True"
+                        MouseDoubleClick="editBook_Click"
+                        AutoGenerateColumns="True"/>
+                    <Button Content="Добавить читателя" 
+                        Name="addUserBtn"
+                        FontSize="10pt" Margin="0,0,36,32" HorizontalAlignment="Right" Width="130" Height="30" VerticalAlignment="Bottom"/>
+                    <Button Content="Редактировать" 
+                        x:Name="editUserBtn"
+                        FontSize="10pt" Margin="0,0,175,32" 
+                        HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom"/>
+                    <Button Content="Удалить" 
+                        x:Name="deleteUserBtn"
+                        FontSize="10pt" 
+                        Margin="0,0,296,32"
+                        HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom"/>
                 </Grid>
-
             </TabItem>
 
             <TabItem Header="Книги читателей" Name="userBooksTab">
                 <DataGrid
-                    Margin="57,-100,64,0"
+                    Margin="57,-100,0,0"
                     x:Name="userBooksDataGrid"
-                    AutoGenerateColumns="True" Height="372" HorizontalAlignment="Left" Width="682"/>
+                    AutoGenerateColumns="True" Height="372" HorizontalAlignment="Left" Width="688"/>
             </TabItem>
         </TabControl>
 
