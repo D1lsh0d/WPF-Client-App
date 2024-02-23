@@ -3,10 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace LibraryApp
 {
@@ -18,36 +21,50 @@ namespace LibraryApp
 
         public static HttpClient client = new HttpClient();
 
-        public static void UpdateBooksCollection()
+        /// <summary>
+        /// Метод для проверки подлкючения к WebAPI
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsApiReachable()
         {
             try
             {
-                booksCollection.Clear();
-                //HTTP GET
-                var responseTask = client.GetAsync("Books");
-                responseTask.Wait();
+                var request = (HttpWebRequest)WebRequest.Create("http://localhost:50923/");
+                request.Method = "HEAD"; // Используем HEAD запрос для проверки доступности без загрузки тела ответа
 
-                var GetResult = responseTask.Result;
-                if (GetResult.IsSuccessStatusCode)
+                using (var response = (HttpWebResponse)request.GetResponse())
                 {
-                    var readTask = GetResult.Content.ReadAsAsync<Books[]>();
-                    readTask.Wait();
-
-                    var books = new ObservableCollection<Books>(readTask.Result);
-
-                    foreach (Books book in books)
-                    {
-                        booksCollection.Add(book);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show(responseTask.Result.ToString());
+                    return response.StatusCode == HttpStatusCode.OK;
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        public static void UpdateBooksCollection()
+        {
+            booksCollection.Clear();
+            //HTTP GET
+            var responseTask = client.GetAsync("Books");
+            responseTask.Wait();
+
+            var GetResult = responseTask.Result;
+            if (GetResult.IsSuccessStatusCode)
+            {
+                var readTask = GetResult.Content.ReadAsAsync<Books[]>();
+                readTask.Wait();
+
+                var books = new ObservableCollection<Books>(readTask.Result);
+
+                foreach (Books book in books)
+                {
+                    booksCollection.Add(book);
+                }
+            }
+            else
+            {
+                MessageBox.Show(responseTask.Result.ToString());
             }
         }
 
@@ -116,8 +133,5 @@ namespace LibraryApp
                 MessageBox.Show(ex.Message);
             }
         }
-
-
-
     }
 }

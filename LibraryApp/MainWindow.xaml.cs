@@ -37,19 +37,26 @@ namespace LibraryApp
             usersDataGrid.ItemsSource = ApiHelper.usersCollection;
             userBooksDataGrid.ItemsSource = ApiHelper.userBooksCollection;
             ApiHelper.client.BaseAddress = new Uri("http://localhost:50923/api/");
+            
+            if (!ApiHelper.IsApiReachable())
+            {
+                MessageBox.Show("Server is not reachable. ", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Close();
+            }
         }
         
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ApiHelper.UpdateBooksCollection();
+            
         }
-
+        
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.OriginalSource is TabControl) // Проверяем точно ли событие вызвано открытием TabControl
             {
                 TabItem selectedTab = Tabs.SelectedItem as TabItem;
+
                 switch (selectedTab.Header)
                 {
                     case "Книги":
@@ -59,6 +66,7 @@ namespace LibraryApp
                     case "Читатели":
                         ApiHelper.UpdateUsersCollection();
                         break;
+
                     case "Книги читателей":
                         ApiHelper.UpdateUserBooksCollection();
                         break;
