@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LibraryApp"
         mc:Ignorable="d"
         Title="Библиотека" Height="600" Width="800"
-        Loaded="Window_Loaded" Icon="/icons8-домашнее-задание-96.png">
+        Icon="/icons8-домашнее-задание-96.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -48,6 +48,7 @@
                     <DataGrid Margin="37,46,37,74"
                             x:Name="usersDataGrid"
                             IsReadOnly="True"
+                            MouseDoubleClick="editUserBtn_Click"
                             AutoGenerateColumns="True"/>
                     <Button Content="Добавить читателя" 
                             Name="addUserBtn"
@@ -55,10 +56,12 @@
                             FontSize="10pt" Margin="0,0,36,32" HorizontalAlignment="Right" Width="130" Height="30" VerticalAlignment="Bottom"/>
                     <Button Content="Редактировать" 
                             x:Name="editUserBtn"
+                            Click="editUserBtn_Click"
                             FontSize="10pt" Margin="0,0,175,32" 
                             HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom"/>
                     <Button Content="Удалить" 
                             x:Name="deleteUserBtn"
+                            Click="deleteUserBtn_Click"
                             FontSize="10pt" 
                             Margin="0,0,296,32"
                             HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom"/>

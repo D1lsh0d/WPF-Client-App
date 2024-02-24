@@ -1,0 +1,41 @@
+﻿<Window x:Class="LibraryApp.Views.Users.EditUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryApp.Views.Users"
+        mc:Ignorable="d"
+        Title="Редактирование пользователя" Height="350" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="ФИО:" Grid.Row="0"/>
+        <TextBox Text="{Binding FullName}" x:Name="FullNameTextBox" Grid.Row="1" Margin="5"/>
+
+        <Label Content="Дата рождения:" Grid.Row="2"/>
+        <DatePicker Text="{Binding DateOfBirth}" x:Name="DateOfBirthPicker" Grid.Row="3" Margin="5"/>
+
+        <Label Content="Адрес:" Grid.Row="4"/>
+        <TextBox Text="{Binding Address}" x:Name="AddressTextBox" Grid.Row="5" Margin="5"/>
+
+        <Label Content="Email:" Grid.Row="6"/>
+        <TextBox Text="{Binding Email}" x:Name="EmailTextBox" Grid.Row="7" Margin="5"/>
+
+        <Label Content="Телефон:" Grid.Row="8"/>
+        <TextBox Text="{Binding Phone}" x:Name="PhoneTextBox" Grid.Row="9" Margin="5"/>
+
+        <Button Height="25" Width="80" Content="Сохранить" Grid.Row="10" HorizontalAlignment="Right" Margin="5" Click="SaveButton_Click"/>
+    </Grid>
+</Window>

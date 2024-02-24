@@ -37,3 +37,5 @@ D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Views\Books\Ed
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Views\Users\CreateUser.g.cs
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Views\Books\CreateBook.baml
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Views\Users\CreateUser.baml
+D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Views\Users\EditUser.g.cs
+D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Views\Users\EditUser.baml
