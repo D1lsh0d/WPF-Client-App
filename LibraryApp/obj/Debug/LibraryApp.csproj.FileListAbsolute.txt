@@ -59,3 +59,5 @@ D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\bin\Debug\ro\Xceed.Wpf.A
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Views\UserBooks\Edit.g.cs
+D:\Учёба\ИСРПО\projects\LibraryApp\LibraryApp\obj\Debug\Views\UserBooks\Edit.baml

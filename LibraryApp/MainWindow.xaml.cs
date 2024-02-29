@@ -87,7 +87,6 @@ namespace LibraryApp
                 {
                     EditBook editBook = new EditBook(book);
                     editBook.ShowDialog();
-                    ApiHelper.UpdateBooksCollection();
                 }
             }
             else
@@ -204,6 +203,63 @@ namespace LibraryApp
             create.Show();
         }
 
+
+        private void editUserBookClick(object sender, RoutedEventArgs e)
+        {
+
+            // Проверяем, есть ли выделенные ячейки
+            if (userBooksDataGrid.SelectedCells.Count > 0)
+            {
+                // Получаем выбранный объект из коллекции
+                var selectedObject = userBooksDataGrid.SelectedItem;
+
+                if (selectedObject is UserBooks record)
+                {
+                    Views.UserBooks.Edit edit = new Views.UserBooks.Edit(record);
+                    edit.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Для редактирования сначала выберите строку книги, затем нажмите на кнопку \"Редактировать\" ", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+            
+        }
+
+        private void deleteRecordClick(object sender, RoutedEventArgs e)
+        {
+            // Проверяем, есть ли выделенные ячейки
+            if (userBooksDataGrid.SelectedCells.Count > 0)
+            {
+                // Получаем выбранный объект из коллекции
+                var selectedObject = userBooksDataGrid.SelectedItem;
+
+                if (selectedObject is UserBooks record)
+                {
+                    MessageBoxResult confirmDelete = MessageBox.Show($"Вы уверены что хотите удалить книгу эту запись?", "Подтвердите удаление", MessageBoxButton.YesNo, MessageBoxImage.Hand);
+                    if (confirmDelete == MessageBoxResult.Yes)
+                    {
+                        // Отправка DELETE-запроса на сервер
+                        HttpResponseMessage response = ApiHelper.client.DeleteAsync(ApiHelper.client.BaseAddress + "UserBooks/" + record.UserBookID.ToString()).Result;
+
+                        // Проверка успешности запроса
+                        if (response.IsSuccessStatusCode)
+                        {
+                            MessageBox.Show(response.Content.ReadAsStringAsync().Result, caption: "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                            ApiHelper.userBooksCollection.Remove(record);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Error: {response.StatusCode} - {response.ReasonPhrase}", caption: "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Для удаления сначала выберите строку книги, затем нажмите на кнопку \"Удалить\" ", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+        }
         #endregion
     }
 }

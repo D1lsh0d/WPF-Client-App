@@ -65,5 +65,10 @@ namespace LibraryApp.Windows
                 MessageBox.Show($"Error: {response.StatusCode} - {response.Content.ReadAsStringAsync().Result}", caption: "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ApiHelper.UpdateBooksCollection();
+        }
     }
 }
