@@ -87,6 +87,7 @@ namespace LibraryApp
                 {
                     EditBook editBook = new EditBook(book);
                     editBook.ShowDialog();
+                    ApiHelper.UpdateBooksCollection();
                 }
             }
             else
@@ -192,6 +193,15 @@ namespace LibraryApp
             {
                 MessageBox.Show("Для редактирования сначала выберите строку книги, затем нажмите на кнопку \"Редактировать\" ", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Stop);
             }
+        }
+
+        #endregion
+
+        #region "Users-Books tab"
+        private void addUserBookBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Views.UserBooks.Create create = new Views.UserBooks.Create();
+            create.Show();
         }
 
         #endregion

@@ -33,7 +33,8 @@ namespace LibraryApp.Windows
                 Author = bookAuthor.Text,
                 Name = bookName.Text,
                 PrintDate = bookPrintDate.SelectedDate,
-                Description = bookDescription.Text
+                Description = bookDescription.Text,
+                Quantity = Quantity.Value
             };
 
             // Преобразование объекта в JSON-строку

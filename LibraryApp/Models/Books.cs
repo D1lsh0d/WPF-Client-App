@@ -13,5 +13,7 @@ namespace LibraryApp.Models
         public string Author { get; set; }
         public string Description { get; set; }
         public Nullable<System.DateTime> PrintDate { get; set; }
+        public Nullable<int> Quantity { get; set; }
+
     }
 }

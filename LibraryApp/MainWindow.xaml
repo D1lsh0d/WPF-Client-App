@@ -68,11 +68,26 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Книги читателей" Name="userBooksTab">
-                <DataGrid
-                    Margin="57,-100,0,0"
-                    x:Name="userBooksDataGrid"
-                    AutoGenerateColumns="True" Height="372" HorizontalAlignment="Left" Width="688"/>
+            <TabItem Header="Книги читателей" Name="userBooksTab" Height="20" VerticalAlignment="Top">
+                <Grid>
+                    <DataGrid Margin="37,46,37,74"
+                        x:Name="userBooksDataGrid"
+                        IsReadOnly="True"
+                        AutoGenerateColumns="True"/>
+                    <Button Content="Добавить" 
+                        Name="addUserBookBtn"
+                        Click="addUserBookBtn_Click"
+                        FontSize="10pt" Margin="0,0,36,32" HorizontalAlignment="Right" Width="130" Height="30" VerticalAlignment="Bottom"/>
+                    <Button Content="Редактировать" 
+                        Click="editUserBtn_Click"
+                        FontSize="10pt" Margin="0,0,175,32" 
+                        HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom"/>
+                    <Button Content="Удалить" 
+                        Click="deleteUserBtn_Click"
+                        FontSize="10pt" 
+                        Margin="0,0,296,32"
+                        HorizontalAlignment="Right" Width="110" Height="30" VerticalAlignment="Bottom"/>
+                </Grid>
             </TabItem>
         </TabControl>
 

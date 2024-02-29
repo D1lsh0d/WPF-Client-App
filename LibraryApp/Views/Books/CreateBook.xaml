@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:LibraryApp.Windows"
         mc:Ignorable="d"
-        Title="Добавление книги" Height="360" Width="460">
+        Title="Добавление книги" Height="395" Width="460">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -31,8 +32,11 @@
         <TextBox Name="bookDescription" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="7" Margin="5"/>
 
         <Label Content="Дата выпуска:" Grid.Row="8" HorizontalAlignment="Left"/>
-        <DatePicker VerticalAlignment="Center" Name="bookPrintDate" Grid.Row="8" Margin="121,0,5,0" HorizontalAlignment="Right" Width="319"/>
+        <DatePicker VerticalAlignment="Center" Name="bookPrintDate" Grid.Row="8" Margin="5" HorizontalAlignment="Right" Width="318"/>
 
-        <Button Content="Сохранить" Name="addBook" Grid.Row="10" Margin="0,5,5,0" Height="25" HorizontalAlignment="Right" Width="80" VerticalAlignment="Top" Click="addBook_Click"/>
+        <Label Content="Количество книг:" Grid.Row="9" HorizontalAlignment="Left"/>
+        <xctk:IntegerUpDown Name="Quantity" Value="1" Grid.Row="9" Margin="5" HorizontalAlignment="Right" Width="79"/>
+
+        <Button Height="25" Width="80" HorizontalAlignment="Right" Content="Сохранить" Name="addBook" Grid.Row="10" Margin="5" Click="addBook_Click"/>
     </Grid>
 </Window>
